@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>重复某个字符串 repeat-string.js</title>
+	<link rel="stylesheet" href="doc.css">
+</head>
+<body>
+	<h2>测试数据1</h2>
+	<pre id="result1"></pre>
+
+	<h2>测试数据2</h2>
+	<pre id="result2"></pre>
+
+	<script src="doc.js"></script>
+	<script src="../repeat-string.js"></script>
+	<script>
+		var demoStr1 = 'Hi';
+		$$('#result1').innerHTML = outputResult(demoStr1, 3);
+
+		var demoStr2 = '-★';
+		$$('#result2').innerHTML = outputResult(demoStr2, 10);
+
+		function outputResult(str, n) {
+			return 'repeatStr(\'' + str + '\', ' + n + ')' + ' <span class="note">=></span> ' + repeatStr(str, n);
+		}
+	</script>
+</body>
+</html>
