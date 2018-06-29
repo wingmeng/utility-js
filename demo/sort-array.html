@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>数组排序 sort-array.js</title>
+	<link rel="stylesheet" href="doc.css">
+</head>
+<body>
+	<h2>测试数据1 <small>普通数组（数字）</small></h2>
+	<pre id="code1"></pre>
+	<pre id="result1"></pre>
+
+	<h2>测试数据2 <small>普通数组（罗马字母）</small></h2>
+	<pre id="code2"></pre>
+	<pre id="result2"></pre>
+
+	<h2>测试数据3 <small>普通数组（汉字）</small></h2>
+	<pre id="code3"></pre>
+	<pre id="result3"></pre>
+
+	<h2>测试数据4 <small>普通数组（混杂）</small></h2>
+	<pre id="code4"></pre>
+	<pre id="result4"></pre>
+
+	<h2>测试数据5 <small>对象数组</small></h2>
+	<pre id="code5"></pre>
+	<pre id="result5"></pre>
+
+	<script src="../sort-array.js"></script>
+	<script>
+		var $$ = function(str) {
+			return document.querySelector(str);
+		};
+
+		var demoArr1 = [13, 36, 8, 1, 9, 0];
+		$$('#code1').innerHTML = JSON.stringify(demoArr1);
+		$$('#result1').innerHTML =
+			outputResult(demoArr1) +
+			outputResult(demoArr1, null, true);
+
+		var demoArr2 = ['ν', 'μ', 'β', 'ψ', 'σ', 'ι', 'α'];
+		$$('#code2').innerHTML = JSON.stringify(demoArr2);
+		$$('#result2').innerHTML =
+			outputResult(demoArr2) +
+			outputResult(demoArr2, null, true);
+
+		var demoArr3 = ['中文', '阿拉伯文', '英文', '西班牙文', '法文', '日文'];
+		$$('#code3').innerHTML = JSON.stringify(demoArr3);
+		$$('#result3').innerHTML =
+			outputResult(demoArr3) +
+			outputResult(demoArr3, null, true);
+
+		var demoArr4 = ['f', 'の', '★', 0, '猿', '8', '∮', 'я'];
+		$$('#code4').innerHTML = JSON.stringify(demoArr4);
+		$$('#result4').innerHTML =
+			outputResult(demoArr4) +
+			outputResult(demoArr4, null, true);
+
+
+		var demoArr5 = [
+			{
+				age: 16,
+				name: 'B',
+				cnName:  '屌丝'
+			}, {
+				age: 9,
+				name: 'D',
+				cnName:  '阿甘'
+			}, {
+				age: 40,
+				name: 'C',
+				cnName:  '白领'
+			}, {
+				age: 30,
+				name: 'A',
+				cnName: '潮人'
+			}
+		];
+
+		$$('#code5').innerHTML = JSON.stringify(demoArr5, null, 2);
+		$$('#result5').innerHTML =
+			outputResult(demoArr5, 'age') +
+			outputResult(demoArr5, 'age', true) +
+			outputResult(demoArr5, 'name') +
+			outputResult(demoArr5, 'name', true) +
+			outputResult(demoArr5, 'cnName') +
+			outputResult(demoArr5, 'cnName', true);
+
+		function outputResult(arr, keyName, reversal) {
+			arr.sort(sortBy(keyName || null, reversal));
+
+			var sortResult = JSON.stringify(arr);
+			var html = '<p>' +
+							'<span class="note">// ' +
+								(keyName ? '按 "' + keyName + '" ' : '') + (reversal ? '降序' : '' ) + '排序后：</span>\n';
+
+			if (keyName) {
+				html += sortResult.replace(new RegExp(keyName, 'g'), '<mark>' + keyName + '</mark>');
+			} else {
+				html += sortResult;
+			}
+
+			html +=	'</p>';
+
+			return html;
+		}
+	</script>
+</body>
+</html>
