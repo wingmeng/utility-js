@@ -1,0 +1,15 @@
+root = true
+
+[*]
+end_of_line = lf
+insert_final_newline = true
+charset = utf-8
+
+# Matches multiple files with brace expansion notation
+[*.{html,css,scss,js}]
+indent_style = tab
+indent_size = 4
+trim_trailing_whitespace = true
+
+[*.md]
+trim_trailing_whitespace = false
