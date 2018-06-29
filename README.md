@@ -3,3 +3,4 @@ Simple and utility JavaScript codes.
 ----
 
 - [数组排序（支持多种类型） sort-array.js](https://wingmeng.github.io/utility-js/demo/sort-array.html)
+- [重复字符串 repeat-string.js](https://wingmeng.github.io/utility-js/demo/repeat-string.html)
