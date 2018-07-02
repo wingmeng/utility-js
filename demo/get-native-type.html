@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>获取原生类型名称 get-native-type.js</title>
+	<link rel="stylesheet" href="doc.css">
+</head>
+<body>
+	<h2>测试1</h2>
+	<pre id="result1"></pre>
+
+	<h2>测试2</h2>
+	<pre id="result2"></pre>
+
+	<h2>测试3</h2>
+	<pre id="result3"></pre>
+
+	<h2>测试4</h2>
+	<pre id="result4"></pre>
+
+	<h2>测试5</h2>
+	<pre id="result5"></pre>
+
+	<h2>测试6</h2>
+	<pre id="result6"></pre>
+
+	<h2>测试7</h2>
+	<pre id="result7"></pre>
+
+	<h2>测试8</h2>
+	<pre id="result8"></pre>
+
+	<h2>测试9</h2>
+	<pre id="result9"></pre>
+
+	<h2>测试10</h2>
+	<pre id="result10"></pre>
+
+	<h2>测试11</h2>
+	<pre id="result11"></pre>
+
+	<h2>测试12</h2>
+	<pre id="result12"></pre>
+
+	<h2>测试13</h2>
+	<pre id="result13"></pre>
+
+	<h2>测试14</h2>
+	<pre id="result14"></pre>
+
+	<h2>测试15</h2>
+	<pre id="result15"></pre>
+
+	<script src="doc.js"></script>
+	<script src="../get-native-type.js"></script>
+	<script>
+		var demo1 = 'abc';
+		$$('#result1').innerHTML = outputResult(demo1);
+
+		var demo2 = 123;
+		$$('#result2').innerHTML = outputResult(demo2);
+
+		var demo3 = function() {};
+		$$('#result3').innerHTML = outputResult(demo3);
+
+		var demo4 = null;
+		$$('#result4').innerHTML = outputResult(demo4);
+
+		var demo5 = true;
+		$$('#result5').innerHTML = outputResult(demo5);
+
+		$$('#result6').innerHTML = outputResult('[1, 2, 3]', true);
+
+		var demo7 = {a: 1, b: 2};
+		$$('#result7').innerHTML = outputResult(demo7);
+
+		var demo8 = new Date();
+		$$('#result8').innerHTML = outputResult(demo8);
+
+		var demo9 = /^a|b|c.*\d$/gi;
+		$$('#result9').innerHTML = outputResult(demo9);
+
+		$$('#result10').innerHTML = outputResult('window.JSON', true);
+
+		$$('#result11').innerHTML = outputResult('window', true);
+
+		$$('#result12').innerHTML = outputResult('document.getElementById("result12")', true);
+
+		$$('#result13').innerHTML = outputResult('document.getElementsByTagName("h2")', true);
+
+		$$('#result14').innerHTML = outputResult('document.createElement("div")', true);
+
+		$$('#result15').innerHTML = outputResult('document.body', true);
+
+		function outputResult(elm, needEvel) {
+			var fmtStr = elm,
+				result = getNativeType(needEvel ? eval(elm) : elm);
+
+			if (result === 'Object') {
+				fmtStr = JSON.stringify(elm);
+			}
+
+			return 'getNativeType(<mark>' + fmtStr + '</mark>)' + ' <span class="note">=></span> ' + result;
+		}
+	</script>
+</body>
+</html>
