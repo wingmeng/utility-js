@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>格式化字符串中字符 format-string-atom.js</title>
+	<link rel="stylesheet" href="doc.css">
+</head>
+<body>
+	<h2>测试1</h2>
+	<pre id="result1"></pre>
+
+	<h2>测试2</h2>
+	<pre id="result2"></pre>
+
+	<h2>测试3</h2>
+	<pre id="result3"></pre>
+
+	<h2>测试4</h2>
+	<pre id="result4"></pre>
+
+	<script src="doc.js"></script>
+	<script src="../format-string-atom.js"></script>
+	<script>
+		var demo1 = 'hello';
+		$$('#result1').innerHTML = outputResult(demo1);
+
+		var demo2 = 'world';
+		$$('#result2').innerHTML = outputResult(demo2, '-');
+
+		var demo3 = 123;
+		$$('#result3').innerHTML = outputResult(demo3);
+
+		var demo4 = 123;
+		$$('#result4').innerHTML = outputResult(demo4, ' ');
+
+		function outputResult(elm, symbol) {
+			var isNumber = typeof elm === 'number';
+			var fmtStr = '<mark>' + (isNumber ? '' : '"') + elm + (isNumber ? '' : '"') + (symbol ? ', "' + symbol + '"' : '') + '</mark>';
+
+
+			return 'formatStringAtom(' + fmtStr + ')' +
+				' <span class="note">=></span> ' + formatStringAtom(elm, symbol);
+		}
+	</script>
+</body>
+</html>
