@@ -8,7 +8,7 @@ function sortBy(key, reversal) {
 		var a = key ? o[key] : o,
 			b = key ? p[key] : p;
 
-		if (isNaN(a)) {  // 非数字排序
+		if (isNaN(a) || isNaN(b)) {  // 非数字排序
 			var locale = navigator.language || navigator.systemLanguage;
 
 			a = String(a);
