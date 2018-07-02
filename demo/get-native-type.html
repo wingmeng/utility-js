@@ -98,6 +98,8 @@
 
 			if (result === 'Object') {
 				fmtStr = JSON.stringify(elm);
+			} else if (result === 'String') {
+				fmtStr = '"' + elm + '"';
 			}
 
 			return 'getNativeType(<mark>' + fmtStr + '</mark>)' + ' <span class="note">=></span> ' + result;
