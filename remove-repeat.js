@@ -1,3 +1,7 @@
+/**
+ * 移除给定数组中的重复元素，返回新数组
+ * @param {Array} arr - 待处理数组
+ */
 function removeRepeat(arr) {
 	var result = [];
 		hash = {};
