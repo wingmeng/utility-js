@@ -54,31 +54,31 @@
 	<script src="doc.js"></script>
 	<script src="../get-native-type.js"></script>
 	<script>
-		var demo1 = 'abc';
-		$$('#result1').innerHTML = outputResult(demo1);
+		var demo = 'abc';
+		$$('#result1').innerHTML = outputResult(demo);
 
-		var demo2 = 123;
-		$$('#result2').innerHTML = outputResult(demo2);
+		demo = 123;
+		$$('#result2').innerHTML = outputResult(demo);
 
-		var demo3 = function() {};
-		$$('#result3').innerHTML = outputResult(demo3);
+		demo = function() {};
+		$$('#result3').innerHTML = outputResult(demo);
 
-		var demo4 = null;
-		$$('#result4').innerHTML = outputResult(demo4);
+		demo = null;
+		$$('#result4').innerHTML = outputResult(demo);
 
-		var demo5 = true;
-		$$('#result5').innerHTML = outputResult(demo5);
+		demo = true;
+		$$('#result5').innerHTML = outputResult(demo);
 
 		$$('#result6').innerHTML = outputResult('[1, 2, 3]', true);
 
-		var demo7 = {a: 1, b: 2};
-		$$('#result7').innerHTML = outputResult(demo7);
+		demo = {a: 1, b: 2};
+		$$('#result7').innerHTML = outputResult(demo);
 
-		var demo8 = new Date();
-		$$('#result8').innerHTML = outputResult(demo8);
+		demo = new Date();
+		$$('#result8').innerHTML = outputResult(demo);
 
-		var demo9 = /^a|b|c.*\d$/gi;
-		$$('#result9').innerHTML = outputResult(demo9);
+		demo = /^a|b|c.*\d$/gi;
+		$$('#result9').innerHTML = outputResult(demo);
 
 		$$('#result10').innerHTML = outputResult('window.JSON', true);
 

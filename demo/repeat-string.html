@@ -15,11 +15,11 @@
 	<script src="doc.js"></script>
 	<script src="../repeat-string.js"></script>
 	<script>
-		var demoStr1 = 'Hi';
-		$$('#result1').innerHTML = outputResult(demoStr1, 3);
+		var demoStr = 'Hi';
+		$$('#result1').innerHTML = outputResult(demoStr, 3);
 
-		var demoStr2 = '-★';
-		$$('#result2').innerHTML = outputResult(demoStr2, 10);
+		demoStr = '-★';
+		$$('#result2').innerHTML = outputResult(demoStr, 10);
 
 		function outputResult(str, n) {
 			return 'repeatStr(\'' + str + '\', ' + n + ')' + ' <span class="note">=></span> ' + repeatStr(str, n);

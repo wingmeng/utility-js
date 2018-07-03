@@ -21,17 +21,17 @@
 	<script src="doc.js"></script>
 	<script src="../format-string-atom.js"></script>
 	<script>
-		var demo1 = 'hello';
-		$$('#result1').innerHTML = outputResult(demo1);
+		var demo = 'hello';
+		$$('#result1').innerHTML = outputResult(demo);
 
-		var demo2 = 'world';
-		$$('#result2').innerHTML = outputResult(demo2, '-');
+		demo = 'world';
+		$$('#result2').innerHTML = outputResult(demo, '-');
 
-		var demo3 = 123;
-		$$('#result3').innerHTML = outputResult(demo3);
+		demo = 123;
+		$$('#result3').innerHTML = outputResult(demo);
 
-		var demo4 = 123;
-		$$('#result4').innerHTML = outputResult(demo4, ' ');
+		demo = 101;
+		$$('#result4').innerHTML = outputResult(demo, ' ');
 
 		function outputResult(elm, symbol) {
 			var isNumber = typeof elm === 'number';
