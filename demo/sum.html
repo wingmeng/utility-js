@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>求和 sum.js</title>
+    <link rel="stylesheet" href="doc.css">
+</head>
+<body>
+	<h2>测试数据1 <small>将求和项以多参数方式传入</small></h2>
+	<pre id="result1"></pre>
+
+	<h2>测试数据2 <small>将求和项封装到一个数组传入</small></h2>
+	<pre id="result2"></pre>
+
+	<script src="doc.js"></script>
+	<script src="../sum.js"></script>
+	<script>
+        $$('#result1').innerHTML = outputResult(11, 22, 33, 44);
+
+		var demoArr = [];
+
+		for (var i = 0; i < 100; i++) {
+			demoArr.push(i + 1);
+		}
+
+		$$('#result2').innerHTML = outputResult(demoArr);
+
+		function outputResult(params) {
+			if (Array.isArray(params)) {
+				var result = sum(params);
+
+				if (params.length > 10) {  // 截断处理，防止内容溢出
+					var start = 10;
+					params.splice(start, params.length - 10 - 2, '...');
+				}
+
+				return 'sum([' + params.join(', ') + '])' + ' <span class="note">=></span> ' + result;
+			}
+
+			var len = arguments.length,
+				argsArr = [];
+
+			for (var i = 0; i < len; i++) {
+				argsArr.push(arguments[i]);
+			}
+
+			return 'sum(' + argsArr.join(', ') + ')' + ' <span class="note">=></span> ' + sum.apply(null, arguments);
+		}
+	</script>
+</body>
+</html>
