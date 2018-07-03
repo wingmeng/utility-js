@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>数组去重 remove-repeat.js</title>
+    <link rel="stylesheet" href="doc.css">
+</head>
+<body>
+	<h2>测试数据1</h2>
+	<pre id="result1"></pre>
+
+	<h2>测试数据2</h2>
+	<pre id="result2"></pre>
+
+	<script src="doc.js"></script>
+	<script src="../remove-repeat.js"></script>
+	<script>
+		var demoArr = ['a', 'c', 'a', 'd', 'f', 'b', 'a'];
+		$$('#result1').innerHTML = outputResult(demoArr);
+
+		demoArr.length = 0;
+
+		for (var i = 0; i < 24; i++) {
+            demoArr.push(Math.round(10 * Math.random()));
+        }
+
+		$$('#result2').innerHTML = outputResult(demoArr);
+
+		function outputResult(arr) {
+			return 'removeRepeat(<mark>' + JSON.stringify(arr) + '</mark>)' + ' <span class="note">=></span> ' + JSON.stringify(removeRepeat(arr));
+		}
+	</script>
+</body>
+</html>
