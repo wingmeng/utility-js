@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>前置补零 prefix-zero.js</title>
+	<link rel="stylesheet" href="doc.css">
+</head>
+<body>
+	<h2>测试1</h2>
+	<pre id="result1"></pre>
+
+	<h2>测试2</h2>
+	<pre id="result2"></pre>
+
+	<h2>测试3</h2>
+	<pre id="result3"></pre>
+
+	<h2>测试4</h2>
+	<pre id="result4"></pre>
+
+	<script src="doc.js"></script>
+	<script src="../prefix-zero.js"></script>
+	<script>
+		var demo = 5;
+		$$('#result1').innerHTML = outputResult(demo, 2);
+
+		demo = 15;
+		$$('#result2').innerHTML = outputResult(demo, 2);
+
+		demo = 6;
+		$$('#result3').innerHTML = outputResult(demo, 4);
+
+		demo = 100;
+		$$('#result4').innerHTML = outputResult(demo);
+
+		function outputResult(num, len) {
+			return 'prefixZero(<mark>' + num + (len ? ', ' + len : '') + '</mark>)' +
+				' <span class="note">=></span> ' + prefixZero(num, len);
+		}
+	</script>
+</body>
+</html>
