@@ -35,7 +35,7 @@
 
 		function outputResult(str) {
 			console.log(escapeHTML(str))
-			return 'escapeHTML(\'' + escapeHTML(str) + '\')' +
+			return 'escapeHTML(<mark>\'' + escapeHTML(str) + '\'</mark>)' +
 				' <span class="note">=></span> ' + escapeHTML(escapeHTML(str));
 		}
 	</script>
