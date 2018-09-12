@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>HTML 转义 escape-html.js</title>
+	<link rel="stylesheet" href="doc.css">
+</head>
+<body>
+	<h2>测试1</h2>
+	<pre id="result1"></pre>
+
+	<h2>测试2</h2>
+	<pre id="result2"></pre>
+
+	<h2>测试3</h2>
+	<pre id="result3"></pre>
+
+	<h2>测试4</h2>
+	<pre id="result4"></pre>
+
+	<script src="doc.js"></script>
+	<script src="../escape-html.js"></script>
+	<script>
+		var demo = '<h1>hello world!</h1>';
+		$$('#result1').innerHTML = outputResult(demo);
+
+		demo = '<script>alert("XSS")<\/script>';
+		$$('#result2').innerHTML = outputResult(demo);
+
+		demo = '<img src="xx.jpg" onerror="alert(\'XSS\')">';
+		$$('#result3').innerHTML = outputResult(demo);
+
+		demo = 'other string';
+		$$('#result4').innerHTML = outputResult(demo);
+
+		function outputResult(str) {
+			console.log(escapeHTML(str))
+			return 'escapeHTML(\'' + escapeHTML(str) + '\')' +
+				' <span class="note">=></span> ' + escapeHTML(escapeHTML(str));
+		}
+	</script>
+</body>
+</html>
