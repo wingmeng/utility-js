@@ -34,7 +34,6 @@
 		$$('#result4').innerHTML = outputResult(demo);
 
 		function outputResult(str) {
-			console.log(escapeHTML(str))
 			return 'escapeHTML(<mark>\'' + escapeHTML(str) + '\'</mark>)' +
 				' <span class="note">=></span> ' + escapeHTML(escapeHTML(str));
 		}
