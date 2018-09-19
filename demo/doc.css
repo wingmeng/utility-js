@@ -1,5 +1,5 @@
 body {font-size: 14px; line-height: 1.8; font-family: "Helvetica Neue", Verdana, Tahoma, "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", "WenQuanYi Micro Hei", sans-serif;}
-pre {padding: 5px 10px; font-size: 13px; font-family: Menlo, Monaco, Consolas, "Courier New", monospace; background: #f0f0f0;}
+pre,code {padding: 5px 10px; font-size: 13px; font-family: Menlo, Monaco, Consolas, "Courier New", monospace; background: #f0f0f0;}
 h2 {margin-bottom: 5px;}
 h2 > small {font-weight: normal; font-size: .75em; color: #777;}
 h2 + pre {margin-top: 0;}
