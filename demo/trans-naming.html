@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>命名方式转换（驼峰命名 & 短横线命名） trans-naming.js</title>
+	<link rel="stylesheet" href="doc.css">
+	<style>
+		#case {tab-size: 4;}
+		.dataset:before {
+			content: '我是 .' attr(class) '\A'
+				'dev-id="' attr(data-dev-id) '"\A'
+				'dev-dev-real-m-a-c="' attr(data-dev-real-m-a-c) '"\A'
+				'dev--i-p="' attr(data--i-p) '"'
+			;
+			white-space: pre;
+		}
+	</style>
+</head>
+<body>
+	<h2>测试1</h2>
+	<pre id="result1"></pre>
+
+	<h2>测试2</h2>
+	<pre id="result2"></pre>
+
+	<h2>测试3</h2>
+	<pre id="result3"></pre>
+
+	<h2>测试4</h2>
+	<pre id="result4"></pre>
+
+	<h2>测试5</h2>
+	<pre id="result5"></pre>
+
+	<h2>测试6</h2>
+	<pre id="result6"></pre>
+
+	<h2>典型应用：datasets</h2>
+	// 将如下 json 存储到 .dataset 元素上
+	<pre id="case">
+{
+	"devId": 1,
+	"devRealMAC": "ab-cd-ef-12-34-56",
+	"IP": "192.168.1.1"
+}</pre>
+	<pre class="dataset"></pre>
+	// 获取 .dataset 元素上的 datasets
+	<pre id="caseResult"></pre>
+
+	<script src="doc.js"></script>
+	<script src="../trans-naming.js"></script>
+	<script>
+		var demo = 'getElementById';
+		$$('#result1').innerHTML = outputResult(demo, 'toKebab');
+
+		demo = 'get-element-by-id';
+		$$('#result2').innerHTML = outputResult(demo, 'toCamel');
+
+		demo = 'userPswTxt';
+		$$('#result3').innerHTML = outputResult(demo, 'toKebab');
+
+		demo = 'user-psw-txt';
+		$$('#result4').innerHTML = outputResult(demo, 'toCamel');
+
+		demo = 'CheckDNS';
+		$$('#result5').innerHTML = outputResult(demo, 'toKebab');
+
+		demo = '-check-d-n-s';
+		$$('#result6').innerHTML = outputResult(demo, 'toCamel');
+
+		function outputResult(str, method) {
+			return 'transNaming.' + method + '(<mark>"' + str + '"</mark>)' +
+				' <span class="note">=></span> ' + transNaming[method](str);
+		}
+
+		var datasetElm = $$('.dataset'),
+			data = JSON.parse($$('#case').innerText || $$('#case').textContent),
+			caseResult = $$('#caseResult');
+
+		for (var key in data) {
+			if (data.hasOwnProperty(key)) {
+				datasetElm.dataset[key] = data[key];
+			}
+		}
+
+		console.log(datasetElm.dataset);
+
+		caseResult.innerHTML = buildDataset('dev-id') +
+							buildDataset('dev-real-m-a-c') +
+							buildDataset('-i-p');
+
+		function buildDataset(attribute) {
+			var key = transNaming.toCamel(attribute);
+
+			return '<p>' +
+				'<mark>' + attribute + '</mark> ' +
+				'(' + key + '): ' +
+				data[key] + '</p>';
+		}
+	</script>
+</body>
+</html>
