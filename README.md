@@ -2,7 +2,7 @@
 
     @Descr: Simple and utility JavaScript codes.
     @Author: Wing Meng
-    @Update: 2018-09-12
+    @Update: 2018-09-19
 
 ----
 
@@ -14,3 +14,4 @@
 - [数组去重 remove-repeat.js](https://wingmeng.github.io/utility-js/demo/remove-repeat.html)
 - [HTML 转义 escape-html.js](https://wingmeng.github.io/utility-js/demo/escape-html.html)
 - [前置补零 prefix-zero.js](https://wingmeng.github.io/utility-js/demo/prefix-zero.html)
+- [命名方式转换（驼峰命名 & 短横线命名）prefix-zero.js](https://wingmeng.github.io/utility-js/demo/trans-naming.html)
