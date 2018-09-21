@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>过滤数组中的假值 filter-false-value.js</title>
+	<link rel="stylesheet" href="doc.css">
+</head>
+<body>
+	<h2>测试</h2>
+	<pre id="result"></pre>
+
+	<script src="doc.js"></script>
+	<script src="../filter-false-value.js"></script>
+	<script src="../get-native-type.js"></script><!-- 仅用于辅助格式化测试结果 -->
+	<script>
+		var demo = [false, 1, 'a', null, 0, undefined, {a: 1}, [], NaN, function(){}];
+
+		$$('#result').innerHTML = outputResult(demo);
+
+		function displayStr(arr) {
+			return arr.reduce(function(total, cur) {
+				var total = total ? total + ', ' : '';
+
+				switch(getNativeType(cur)) {
+					case 'Object':
+						return total + JSON.stringify(cur);
+					case 'Array':
+						return total + '[' + cur + ']';
+					case 'String':
+						return total + '"' + cur + '"';
+					default:
+						return total + String(cur);
+				}
+			}, '');
+		}
+
+		function outputResult(arr) {
+			return 'filterFalseValue(<mark>[' + displayStr(arr) + ']</mark>)' +
+				' <span class="note">=></span> [' + displayStr(filterFalseValue(arr)) + ']';
+		}
+	</script>
+</body>
+</html>
