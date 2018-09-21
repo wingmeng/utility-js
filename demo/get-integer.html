@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>取整 get-integer.js</title>
+	<link rel="stylesheet" href="doc.css">
+</head>
+<body>
+	<h2>测试1</h2>
+	<pre id="result1"></pre>
+
+	<h2>测试2</h2>
+	<pre id="result2"></pre>
+
+	<h2>测试3</h2>
+	<pre id="result3"></pre>
+
+	<h2>测试4</h2>
+	<pre id="result4"></pre>
+
+	<script src="doc.js"></script>
+	<script src="../get-integer.js"></script>
+	<script>
+		var demo = 10.01;
+		$$('#result1').innerHTML = outputResult(demo);
+
+		demo = 3.1415926;
+		$$('#result2').innerHTML = outputResult(demo);
+
+		demo = -2.6;
+		$$('#result3').innerHTML = outputResult(demo);
+
+		demo = 0;
+		$$('#result4').innerHTML = outputResult(demo);
+
+		function outputResult(num) {
+			return 'getInteger(<mark>' + num + '</mark>)' +
+				' <span class="note">=></span> ' + getInteger(num);
+		}
+	</script>
+</body>
+</html>
