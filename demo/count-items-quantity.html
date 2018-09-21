@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>统计数组中相同项目的个数 count-items-quantity.js</title>
+	<link rel="stylesheet" href="doc.css">
+</head>
+<body>
+	<h2>测试1</h2>
+	<pre id="result1"></pre>
+
+	<h2>测试2</h2>
+	<pre id="result2"></pre>
+
+	<h2>测试3</h2>
+	<pre id="result3"></pre>
+
+	<script src="doc.js"></script>
+	<script src="../count-items-quantity.js"></script>
+	<script>
+		var demo = ['BMW', 'Benz', 'Benz', 'Tesla', 'BMW', 'Toyota'];
+		$$('#result1').innerHTML = outputResult(demo);
+
+		demo = [2, 6, 8, 10, 6, 6];
+		$$('#result2').innerHTML = outputResult(demo);
+
+		demo = [null, 'undefined', null, 0, 'a'];
+		$$('#result3').innerHTML = outputResult(demo);
+
+		function outputResult(arr) {
+			return 'countItemsQuanitity(<mark>' + JSON.stringify(arr) + '</mark>)' +
+				' <span class="note">=></span> ' + JSON.stringify(countItemsQuanitity(arr));
+		}
+	</script>
+</body>
+</html>
