@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>判断奇偶 check-odd-even.js</title>
+	<link rel="stylesheet" href="doc.css">
+</head>
+<body>
+	<h2>测试1</h2>
+	<pre id="result1"></pre>
+
+	<h2>测试2</h2>
+	<pre id="result2"></pre>
+
+	<h2>测试3</h2>
+	<pre id="result3"></pre>
+
+	<h2>测试4</h2>
+	<pre id="result4"></pre>
+
+	<h2>测试5</h2>
+	<pre id="result5"></pre>
+
+	<script src="doc.js"></script>
+	<script src="../check-odd-even.js"></script>
+	<script>
+		var demo = 6;
+		$$('#result1').innerHTML = outputResult(demo);
+
+		demo = 9;
+		$$('#result2').innerHTML = outputResult(demo);
+
+		demo = -2;
+		$$('#result3').innerHTML = outputResult(demo);
+
+		demo = -3;
+		$$('#result4').innerHTML = outputResult(demo);
+
+		demo = 0;
+		$$('#result5').innerHTML = outputResult(demo);
+
+		function outputResult(num) {
+			return 'checkOddEven(<mark>' + num + '</mark>)' +
+				' <span class="note">=></span> ' + checkOddEven(num);
+		}
+	</script>
+</body>
+</html>
