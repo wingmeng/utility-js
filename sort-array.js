@@ -5,8 +5,25 @@
  */
 function sortBy(key, reversal) {
 	return function(o, p) {
-		var a = key ? o[key] : o,
-			b = key ? p[key] : p;
+		var a = o,
+			b = p;
+
+		if (key) {
+			if (/^\w+(\.\w+)+$/.test(key)) {  // 'a.b.c' 形式
+				var fieldArr = key.split('.');
+
+				a = fieldArr.reduce(function(total, cur) {
+					return total[cur];
+				}, o);
+
+				b = fieldArr.reduce(function(total, cur) {
+					return total[cur];
+				}, p);
+			} else {
+				a = o[key];
+				b = p[key];
+			}
+		}
 
 		if (isNaN(a) || isNaN(b)) {  // 非数字排序
 			var locale = navigator.language || navigator.systemLanguage;

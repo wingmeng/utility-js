@@ -26,6 +26,10 @@
 	<pre id="code5"></pre>
 	<pre id="result5"></pre>
 
+	<h2>测试数据6 <small>深层对象数组</small></h2>
+	<pre id="code6"></pre>
+	<pre id="result6"></pre>
+
 	<script src="doc.js"></script>
 	<script src="../sort-array.js"></script>
 	<script>
@@ -74,6 +78,34 @@
 			}
 		];
 
+		var demoArr6 = [
+			{
+				basic: {
+					info: {
+						age: 20
+					}
+				}
+			}, {
+				basic: {
+					info: {
+						age: 31
+					}
+				}
+			}, {
+				basic: {
+					info: {
+						age: 27
+					}
+				}
+			}, {
+				basic: {
+					info: {
+						age: 17
+					}
+				}
+			}
+		];
+
 		$$('#code5').innerHTML = JSON.stringify(demoArr5, null, 2);
 		$$('#result5').innerHTML =
 			outputResult(demoArr5, 'age') +
@@ -82,6 +114,11 @@
 			outputResult(demoArr5, 'name', true) +
 			outputResult(demoArr5, 'cnName') +
 			outputResult(demoArr5, 'cnName', true);
+
+		$$('#code6').innerHTML = JSON.stringify(demoArr6, null, 2);
+		$$('#result6').innerHTML =
+			outputResult(demoArr6, 'basic.info.age') +
+			outputResult(demoArr6, 'basic.info.age', true);
 
 		function outputResult(arr, keyName, reversal) {
 			arr.sort(sortBy(keyName || null, reversal));
