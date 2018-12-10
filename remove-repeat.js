@@ -3,7 +3,7 @@
  * @param {Array} arr - 待处理数组
  */
 function removeRepeat(arr) {
-	var result = [];
+	var result = [],
 		hash = {};
 
 	for (var i = 0, elm; i < arr.length; i++) {
