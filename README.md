@@ -14,7 +14,7 @@
 - [数组去重 remove-repeat.js](https://wingmeng.github.io/utility-js/demo/remove-repeat.html)
 - [HTML 转义 escape-html.js](https://wingmeng.github.io/utility-js/demo/escape-html.html)
 - [前置补零 prefix-zero.js](https://wingmeng.github.io/utility-js/demo/prefix-zero.html)
-- [命名方式转换（驼峰命名 & 短横线命名）prefix-zero.js](https://wingmeng.github.io/utility-js/demo/trans-naming.html)
+- [命名方式转换（驼峰命名 & 短横线命名）trans-naming.js](https://wingmeng.github.io/utility-js/demo/trans-naming.html)
 - [过滤数组中的假值 filter-false-value.js](https://wingmeng.github.io/utility-js/demo/filter-false-value.html)
 - [取整 get-integer.js](https://wingmeng.github.io/utility-js/demo/get-integer.html)
 - [判断奇偶 check-odd-even.js](https://wingmeng.github.io/utility-js/demo/check-odd-even.html)
