@@ -2,7 +2,6 @@
 
     @Descr: Simple and utility JavaScript codes.
     @Author: Wing Meng
-    @Update: 2018-09-21
 
 ----
 
@@ -19,3 +18,4 @@
 - [取整 get-integer.js](https://wingmeng.github.io/utility-js/demo/get-integer.html)
 - [判断奇偶 check-odd-even.js](https://wingmeng.github.io/utility-js/demo/check-odd-even.html)
 - [统计数组中相同项目的个数 count-items-quantity.js](https://wingmeng.github.io/utility-js/demo/count-items-quantity.html)
+- [无报错链式取值 get-chain-obj-value.js](https://wingmeng.github.io/utility-js/demo/get-chain-obj-value.html)
