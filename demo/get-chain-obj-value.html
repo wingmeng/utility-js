@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>无报错链式取值 get-chain-obj-value.js</title>
+	<link rel="stylesheet" href="doc.css">
+</head>
+<body>
+  <h2>测试数据1 <small>object</small></h2>
+  <pre id="code1"></pre>
+  <pre id="result1"></pre>
+
+  <h2>测试数据2 <small>array</small></h2>
+  <pre id="code2"></pre>
+  <pre id="result2"></pre>
+
+  <h2>测试数据3 <small>边界测试1</small></h2>
+  <pre id="code3"></pre>
+  <pre id="result3"></pre>
+
+  <h2>测试数据4 <small>边界测试2</small></h2>
+  <pre id="code4"></pre>
+  <pre id="result4"></pre>
+
+	<script src="doc.js"></script>
+	<script src="../src/get-chain-obj-value.js"></script>
+	<script>
+		let data = {
+			status: 200,
+			msg: 'ok',
+			response: {
+				data: {
+					total: 2,
+					pageSize: 10,
+					lists: [
+						{id: 1, name: 'hello'},
+						{id: 2, name: 'world'}
+					]
+				},
+				keyword: 'hello world'
+			}
+    };
+    let str = 'response.data.lists';
+
+		$$('#code1').innerHTML = JSON.stringify(data, null, 2);
+    $$('#result1').innerHTML = outputResult(data, str);
+    
+    data = ['a', 'b', 'c', 'd'];
+    str = 2;
+
+    $$('#code2').innerHTML = JSON.stringify(data);
+    $$('#result2').innerHTML = outputResult(data, str);
+
+    data = {
+      a: {
+        b: {
+          c: {
+            d: 'inner'
+          }
+        }
+      }
+    };
+    str = 'a.d.b.c';
+
+    $$('#code3').innerHTML = JSON.stringify(data, null, 2);
+    $$('#result3').innerHTML = outputResult(data, str);
+
+    $$('#code4').innerHTML = 'null';
+    $$('#result4').innerHTML = outputResult(null, null);
+
+
+		function outputResult(data, s) {
+      return 'getChainObjValue(DATA, ' + (typeof s === 'string' ? '\'' + s + '\'' : s) + ')' +
+        ' <span class="note">=></span> ' +
+        JSON.stringify(getChainObjValue(data, s), null, 2);
+		}
+	</script>
+</body>
+</html>
