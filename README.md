@@ -19,3 +19,4 @@
 - [判断奇偶 check-odd-even.js](https://wingmeng.github.io/utility-js/demo/check-odd-even.html)
 - [统计数组中相同项目的个数 count-items-quantity.js](https://wingmeng.github.io/utility-js/demo/count-items-quantity.html)
 - [无报错链式取值 get-chain-obj-value.js](https://wingmeng.github.io/utility-js/demo/get-chain-obj-value.html)
+- [获取两个数组的交集 get-array-intersection.js](https://wingmeng.github.io/utility-js/demo/get-array-intersection.html)
