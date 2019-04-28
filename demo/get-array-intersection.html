@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>获取两个数组的交集 get-array-intersection.js</title>
+	<link rel="stylesheet" href="doc.css">
+</head>
+<body>
+  <h2>测试数据1</h2>
+  <pre id="code1">[1, 2, 3, 4, 5, 4, 3], [3, 5]</pre>
+  <pre id="result1"></pre>
+
+  <h2>测试数据2</h2>
+  <pre id="code2">[1, 1], [1]</pre>
+  <pre id="result2"></pre>
+
+	<script src="doc.js"></script>
+	<script src="../src/get-array-intersection.js"></script>
+	<script>
+		var getDataArr = function(el) {
+      return (
+        $$(el).innerHTML
+          .split(/\]\,\s{1}\[/)
+          .map(function(item, idx) {
+            idx === 0 ? item += ']' : item = '[' + item;
+            return JSON.parse(item);
+          })
+      )
+    };
+
+    var data = getDataArr('#code1');
+    $$('#result1').innerHTML = outputResult(data);
+
+    data = getDataArr('#code2');
+    $$('#result2').innerHTML = outputResult(data);
+
+		function outputResult(data, s) {
+      var arr1 = data[0];
+      var arr2 = data[1];
+
+      return '<span class="note">// 输出：</span>\n' +
+        JSON.stringify(getArrIntersection(arr1, arr2));
+		}
+	</script>
+</body>
+</html>
