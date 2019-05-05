@@ -20,3 +20,4 @@
 - [统计数组中相同项目的个数 count-items-quantity.js](https://wingmeng.github.io/utility-js/demo/count-items-quantity.html)
 - [无报错链式取值 get-chain-obj-value.js](https://wingmeng.github.io/utility-js/demo/get-chain-obj-value.html)
 - [获取两个数组的交集 get-array-intersection.js](https://wingmeng.github.io/utility-js/demo/get-array-intersection.html)
+- [求斐波那契数列的前 n 位集合 fibonacci.js](https://wingmeng.github.io/utility-js/demo/fibonacci.html)

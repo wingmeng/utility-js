@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>求斐波那契数列的前 n 位集合 fibonacci.js</title>
+    <link rel="stylesheet" href="doc.css">
+</head>
+<body>
+	<pre id="result"></pre>
+
+	<script src="doc.js"></script>
+	<script src="../src/fibonacci.js"></script>
+	<script>
+    let result = $$('#result');
+    let len = 10;
+
+    [...Array(len).keys()].map(it => {
+      outputResult(it + 1);
+    });
+
+		function outputResult(n) {
+      result.innerHTML += `前${n}项：[${fibonacci(n)}]\n`
+		}
+	</script>
+</body>
+</html>
